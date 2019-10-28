@@ -1,6 +1,6 @@
 <?php
 
-namespace Chemirea\Lampda;
+namespace Chemirea\Lambda;
 
 use ReflectionFunction;
 use ArgumentCountError;
@@ -17,12 +17,15 @@ class Functional
     /**
      * Functional constructor.
      * @param $x
-     * @throws \ReflectionException
      */
     private function __construct($x)
     {
         if (is_callable($x)) {
-            $this->item = new ReflectionFunction($x);
+            try {
+                $this->item = new ReflectionFunction($x);
+            } catch (\ReflectionException $e) {
+                throw new LambdaException($e->getMessage());
+            }
         } else {
             $this->item = $x;
         }
@@ -37,7 +40,6 @@ class Functional
      *
      * @param mixed ...$args
      * @return $this
-     * @throws \ReflectionException
      */
     public function __invoke(...$args)
     {
@@ -60,7 +62,6 @@ class Functional
      * @param ReflectionFunction $f
      * @param $args
      * @return $this
-     * @throws \ReflectionException
      */
     private function partiallyApply(ReflectionFunction $f, $args)
     {
@@ -74,7 +75,6 @@ class Functional
      *
      * @param $x
      * @return static
-     * @throws \ReflectionException
      */
     static function wrap($x): self
     {
@@ -100,7 +100,6 @@ class Functional
      *
      * @param $f
      * @return $this
-     * @throws \ReflectionException
      */
     public function bind($f)
     {
