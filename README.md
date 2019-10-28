@@ -1,4 +1,6 @@
-# Lampda
+# lambda-php
+
+[![Build Status](https://travis-ci.org/chemirea/lambda-php.svg?branch=master)](https://travis-ci.org/chemirea/lambda-php)
 
 ## About
 
@@ -8,7 +10,7 @@
 
 <?php
 
-use Chemirea\Lampda\Functional as F;
+use Chemirea\Lambda\Functional as F;
 
 $add = function (int $x, int $y): int
 {
