@@ -46,5 +46,5 @@ $addOneTwo(1); // 4
 ## install
 
 ```
-$ composer require chemirea/lambda-php 
+$ composer require chemirea/lambda-php=dev-master
 ```
