@@ -1,8 +1,8 @@
 <?php
 
-namespace Chemirea\Lampda;
+namespace Chemirea\Lambda;
 
-use Chemirea\Lampda\Functional as F;
+use Chemirea\Lambda\Functional as F;
 
 trait Vec
 {

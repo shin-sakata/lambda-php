@@ -1,8 +1,8 @@
 <?php
 
-namespace Chemirea\Lampda\Tests;
+namespace Chemirea\Lambda\Tests;
 
-use Chemirea\Lampda\Vec;
+use Chemirea\Lambda\Vec;
 use PHPUnit\Framework\TestCase;
 
 class VecTest extends TestCase

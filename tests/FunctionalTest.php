@@ -1,8 +1,8 @@
 <?php
 
-namespace Chemirea\Lampda\Tests;
+namespace Chemirea\Lambda\Tests;
 
-use Chemirea\Lampda\Functional as F;
+use Chemirea\Lambda\Functional as F;
 use PHPUnit\Framework\TestCase;
 
 class FunctionalTest extends TestCase
