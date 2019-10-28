@@ -1,0 +1,13 @@
+language: php
+php:
+  - 7.3
+  - 7.2
+
+install:
+  - travis_retry composer install --dev --no-interaction --prefer-dist --no-suggest
+
+script:
+  - ./vendor/bin/phpunit --coverage-clover clover.xml
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -cF php
