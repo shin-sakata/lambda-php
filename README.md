@@ -42,3 +42,9 @@ $addOneTwo = $addOne->bind($addTwo);
 $addOneTwo(1); // 4
 
 ```
+
+## install
+
+```
+$ composer require chemirea/lambda-php 
+```
