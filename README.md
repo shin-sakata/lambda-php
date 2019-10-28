@@ -1,6 +1,10 @@
 # lambda-php
 
 [![Build Status](https://travis-ci.org/chemirea/lambda-php.svg?branch=master)](https://travis-ci.org/chemirea/lambda-php)
+[![codecov](https://codecov.io/gh/chemirea/lambda-php/branch/master/graph/badge.svg)](https://codecov.io/gh/chemirea/lambda-php)
+[![StyleCI](https://github.styleci.io/repos/217989836/shield?branch=master)](https://github.styleci.io/repos/217989836)
+[![Maintainability](https://api.codeclimate.com/v1/badges/91fb9473212123f50f80/maintainability)](https://codeclimate.com/github/chemirea/lambda-php/maintainability)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 ## About
 
@@ -12,8 +16,7 @@
 
 use Chemirea\Lambda\Functional as F;
 
-$add = function (int $x, int $y): int
-{
+$add = function (int $x, int $y): int {
     return $x + $y;
 };
 
