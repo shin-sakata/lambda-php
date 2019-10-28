@@ -2,15 +2,14 @@
 
 namespace Chemirea\Lambda\Tests;
 
-use Chemirea\Lambda\Functional as F;
 use PHPUnit\Framework\TestCase;
+use Chemirea\Lambda\Functional as F;
 
 class FunctionalTest extends TestCase
 {
     public function testInvoke()
     {
-        $addOne = function(int $x): int
-        {
+        $addOne = function (int $x): int {
             return $x + 1;
         };
 
@@ -21,8 +20,7 @@ class FunctionalTest extends TestCase
 
     public function testSomeArgsInvoke()
     {
-        $add = function (int $x, int $y): int
-        {
+        $add = function (int $x, int $y): int {
             return $x + $y;
         };
 
@@ -30,23 +28,20 @@ class FunctionalTest extends TestCase
 
         $this->assertEquals(3, $wrappedAdd(1, 2));
 
-        $concat = F::wrap(function (string $str1, string $str2): string
-        {
-            return $str1 . $str2;
+        $concat = F::wrap(function (string $str1, string $str2): string {
+            return $str1.$str2;
         });
 
-        $this->assertEquals("Hello world!", $concat("Hello ")("world!"));
+        $this->assertEquals('Hello world!', $concat('Hello ')('world!'));
     }
 
     public function testBind()
     {
-        $add = function (int $x, int $y): int
-        {
+        $add = function (int $x, int $y): int {
             return $x + $y;
         };
 
-        $addOne = function (int $x): int
-        {
+        $addOne = function (int $x): int {
             return $x + 1;
         };
 
@@ -57,13 +52,11 @@ class FunctionalTest extends TestCase
 
     public function testBindBind()
     {
-        $add = function (int $x, int $y): int
-        {
+        $add = function (int $x, int $y): int {
             return $x + $y;
         };
 
-        $addOne = function(int $x): int
-        {
+        $addOne = function (int $x): int {
             return $x + 1;
         };
 
@@ -74,8 +67,7 @@ class FunctionalTest extends TestCase
 
     public function testApplyFunction()
     {
-        $addOne = function(int $x): int
-        {
+        $addOne = function (int $x): int {
             return $x + 1;
         };
 
@@ -84,8 +76,7 @@ class FunctionalTest extends TestCase
 
     public function testApplyBindingFunction()
     {
-        $addOne = function(int $x): int
-        {
+        $addOne = function (int $x): int {
             return $x + 1;
         };
 
@@ -107,13 +98,11 @@ class FunctionalTest extends TestCase
 
     public function testCurry()
     {
-        $add = F::wrap(function(int $x, int $y): int
-        {
+        $add = F::wrap(function (int $x, int $y): int {
             return $x + $y;
         });
 
-        $div = F::wrap(function(int $x, int $y): int
-        {
+        $div = F::wrap(function (int $x, int $y): int {
             return $y / $x;
         });
 
@@ -132,17 +121,15 @@ class FunctionalTest extends TestCase
 
     public function testManyCurry()
     {
-        $addAdd = F::wrap(function(int $x, int $y, int $z): int
-        {
+        $addAdd = F::wrap(function (int $x, int $y, int $z): int {
             return $x + $y + $z;
         });
 
         $this->assertEquals(1 + 2 + 3, $addAdd(1)(2)(3));
-        $this->assertEquals(1 + 2 + 3, $addAdd(1,2)(3));
+        $this->assertEquals(1 + 2 + 3, $addAdd(1, 2)(3));
         $this->assertEquals(1 + 2 + 3, $addAdd(1)(2, 3));
 
-        $addAddAdd = F::wrap(function(int $w, int $x, int $y, int $z): int
-        {
+        $addAddAdd = F::wrap(function (int $w, int $x, int $y, int $z): int {
             return $w + $x + $y + $z;
         });
 
@@ -153,13 +140,11 @@ class FunctionalTest extends TestCase
 
     public function testBindCurriedFunction()
     {
-        $add = F::wrap(function(int $x, int $y): int
-        {
+        $add = F::wrap(function (int $x, int $y): int {
             return $x + $y;
         });
 
-        $div = F::wrap(function(int $x, int $y): int
-        {
+        $div = F::wrap(function (int $x, int $y): int {
             return $y / $x;
         });
 
@@ -173,13 +158,11 @@ class FunctionalTest extends TestCase
 
     public function testApplyBindedCurriedFunction()
     {
-        $add = F::wrap(function(int $x, int $y): int
-        {
+        $add = F::wrap(function (int $x, int $y): int {
             return $x + $y;
         });
 
-        $div = F::wrap(function(int $x, int $y): int
-        {
+        $div = F::wrap(function (int $x, int $y): int {
             return $y / $x;
         });
 
@@ -193,12 +176,11 @@ class FunctionalTest extends TestCase
     }
 
     /**
-     * 型が違う場合に正しくエラーがスローされるかのテスト1
+     * 型が違う場合に正しくエラーがスローされるかのテスト1.
      */
     public function testTypeErrorException1()
     {
-        $add = F::wrap(function(int $x, int $y): int
-        {
+        $add = F::wrap(function (int $x, int $y): int {
             return $x + $y;
         });
 
@@ -207,12 +189,11 @@ class FunctionalTest extends TestCase
     }
 
     /**
-     * 型が違う場合に正しくエラーがスローされるかのテスト2
+     * 型が違う場合に正しくエラーがスローされるかのテスト2.
      */
     public function testTypeErrorException2()
     {
-        $add = F::wrap(function(int $x, int $y): int
-        {
+        $add = F::wrap(function (int $x, int $y): int {
             return $x + $y;
         });
 

@@ -2,8 +2,8 @@
 
 namespace Chemirea\Lambda;
 
-use ReflectionFunction;
 use ArgumentCountError;
+use ReflectionFunction;
 
 class Functional
 {
@@ -57,7 +57,7 @@ class Functional
     }
 
     /**
-     * 部分適用
+     * 部分適用.
      *
      * @param ReflectionFunction $f
      * @param $args
@@ -71,12 +71,12 @@ class Functional
     }
 
     /**
-     * Constructor alias
+     * Constructor alias.
      *
      * @param $x
      * @return static
      */
-    static function wrap($x): self
+    public static function wrap($x): self
     {
         return new self($x);
     }
@@ -104,9 +104,7 @@ class Functional
     public function bind($f)
     {
         if (($this->unwrap() instanceof ReflectionFunction)) {
-
-            return self::wrap(function (...$args) use ($f)
-            {
+            return self::wrap(function (...$args) use ($f) {
                 return $f($this(...$args));
             });
         } else {
