@@ -2,5 +2,6 @@
 
 namespace Chemirea\Lambda;
 
-class LambdaException extends \Error {
+class LambdaException extends \Error
+{
 }
