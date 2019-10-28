@@ -10,12 +10,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Chemirea\\Lampda\\": "src/"
+            "Chemirea\\Lambda\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Chemirea\\Lampda\\Tests\\": "tests/"
+            "Chemirea\\Lambda\\Tests\\": "tests/"
         }
     },
     "require": {
@@ -23,5 +23,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^8.4"
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
     }
 }
