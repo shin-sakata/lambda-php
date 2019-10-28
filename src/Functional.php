@@ -15,10 +15,9 @@ class Functional
     private $item;
 
     /**
-     * Wrapping arg.
-     *
-     * Bindable constructor.
+     * Functional constructor.
      * @param $x
+     * @throws \ReflectionException
      */
     private function __construct($x)
     {
@@ -37,7 +36,8 @@ class Functional
      * return currying function.
      *
      * @param mixed ...$args
-     * @return mixed
+     * @return $this
+     * @throws \ReflectionException
      */
     public function __invoke(...$args)
     {
@@ -55,11 +55,12 @@ class Functional
     }
 
     /**
-     * 部分適用.
+     * 部分適用
      *
      * @param ReflectionFunction $f
      * @param $args
-     * @return Functional
+     * @return $this
+     * @throws \ReflectionException
      */
     private function partiallyApply(ReflectionFunction $f, $args)
     {
@@ -69,12 +70,11 @@ class Functional
     }
 
     /**
-     * コンストラクタのエイリアス.
-     *
      * Constructor alias
      *
      * @param $x
-     * @return Functional
+     * @return static
+     * @throws \ReflectionException
      */
     static function wrap($x): self
     {
@@ -99,7 +99,8 @@ class Functional
      * If item is not a function, apply function to item.
      *
      * @param $f
-     * @return Functional
+     * @return $this
+     * @throws \ReflectionException
      */
     public function bind($f)
     {
