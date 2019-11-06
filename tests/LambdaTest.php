@@ -1,6 +1,6 @@
 <?php
 
-namespace Chemirea\Lambda\Tests;
+namespace Chemirea\impl\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Chemirea\Lambda\Lambda as L;

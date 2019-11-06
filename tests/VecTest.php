@@ -1,6 +1,6 @@
 <?php
 
-namespace Chemirea\Lambda\Tests;
+namespace Chemirea\Lambad\Tests;
 
 use Chemirea\Lambda\Vec;
 use PHPUnit\Framework\TestCase;
