@@ -4,9 +4,7 @@ namespace Chemirea\Lambda\TypeClasses;
 
 interface Applicative extends Functor
 {
-    public function pure($x);
-
-    public function seqApply($x);
+    static public function pure($x);
 
     public function apply($x);
 }
