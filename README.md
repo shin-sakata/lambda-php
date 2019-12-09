@@ -14,13 +14,13 @@
 
 <?php
 
-use Chemirea\Lambda\Functional as F;
+use Chemirea\Lambda\Lambda as L;
 
 $add = function (int $x, int $y): int {
     return $x + $y;
 };
 
-$wrappedAdd = F::wrap($add);
+$wrappedAdd = L::wrap($add);
 
 // この様に普通に呼び出せる
 $wrappedAdd(1,2); // 3
