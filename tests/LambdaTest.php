@@ -2,8 +2,8 @@
 
 namespace Chemirea\Lambda\Tests;
 
-use PHPUnit\Framework\TestCase;
 use Chemirea\Lambda\Lambda as L;
+use PHPUnit\Framework\TestCase;
 
 class LambdaTest extends TestCase
 {

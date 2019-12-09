@@ -31,14 +31,14 @@ class Maybe implements Monad
         return $this->value;
     }
 
-    static public function pure($value)
+    public static function pure($value)
     {
         return new self($value);
     }
 
     public function fmap(callable $g): self
     {
-        return !is_null($this->unwrap())
+        return ! is_null($this->unwrap())
             ? self::Just($g($this->unwrap()))
             : self::NOTHING();
     }
@@ -46,7 +46,8 @@ class Maybe implements Monad
     public function apply($x): self
     {
         $f = $this->unwrap();
-        return !is_null($f)
+
+        return ! is_null($f)
             ? $x->fmap($f)
             : self::NOTHING();
     }
@@ -54,7 +55,8 @@ class Maybe implements Monad
     public function bind(Lambda $g): self
     {
         $x = $this->unwrap();
-        return !is_null($x)
+
+        return ! is_null($x)
             ? $g($x)
             : self::NOTHING();
     }
@@ -63,8 +65,9 @@ class Maybe implements Monad
     {
         $x = $this->unwrap();
 
-        if (!is_null($x)) {
+        if (! is_null($x)) {
             $y = $x;
+
             return true;
         } else {
             return false;
