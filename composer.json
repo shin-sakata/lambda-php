@@ -10,7 +10,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Chemirea\\Lambda\\": "src/"
+            "Chemirea\\Lambda\\": "src/Implementation/",
+            "Chemirea\\Lambda\\TypeClasses\\": "src/TypeClasses/"
         }
     },
     "autoload-dev": {

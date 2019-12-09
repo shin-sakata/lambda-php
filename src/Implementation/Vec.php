@@ -2,7 +2,7 @@
 
 namespace Chemirea\Lambda;
 
-use Chemirea\Lambda\Functional as F;
+use Chemirea\Lambda\Lambda as L;
 
 trait Vec
 {
@@ -11,7 +11,7 @@ trait Vec
         $array_function = 'array_'.$name;
 
         return function_exists($array_function)
-            ? F::wrap($array_function)(...$args)
-            : F::wrap($name)(...$args);
+            ? L::wrap($array_function)(...$args)
+            : L::wrap($name)(...$args);
     }
 }

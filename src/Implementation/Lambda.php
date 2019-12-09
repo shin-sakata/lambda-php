@@ -5,7 +5,7 @@ namespace Chemirea\Lambda;
 use ArgumentCountError;
 use ReflectionFunction;
 
-class Functional
+class Lambda
 {
     /**
      * 値かReflectionFunction.
